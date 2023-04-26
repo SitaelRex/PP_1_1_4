@@ -1,6 +1,7 @@
 package jm.task.core.jdbc;
 
 import jm.task.core.jdbc.service.*;
+import jm.task.core.jdbc.util.Util;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,5 +13,6 @@ public class Main {
         userService.saveUser("fourth","dude", (byte)47);
         userService.getAllUsers().forEach(System.out::println);
         userService.dropUsersTable();
+        Util.closeHibernateFactory();
     }
 }
